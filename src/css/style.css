@@ -1,0 +1,476 @@
+@font-face {
+  font-family: "TT Hoves";
+  src: local("TT Hoves Light"), local("TTHoves-Light"),
+    url("./fonts/TTHoves-Light.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/TTHoves-Light.woff2") format("woff2"),
+    url("./fonts/TTHoves-Light.woff") format("woff"),
+    url("./fonts/TTHoves-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: local("TT Hoves Regular"), local("TTHoves-Regular"),
+    url("fonts/TTHoves-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TTHoves-Regular.woff2") format("woff2"),
+    url("fonts/TTHoves-Regular.woff") format("woff"),
+    url("fonts/TTHoves-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: local("TT Hoves Medium"), local("TTHoves-Medium"),
+    url("fonts/TTHoves-Medium.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TTHoves-Medium.woff2") format("woff2"),
+    url("fonts/TTHoves-Medium.woff") format("woff"),
+    url("fonts/TTHoves-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: local("TT Hoves Bold"), local("TTHoves-Bold"),
+    url("fonts/TTHoves-Bold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TTHoves-Bold.woff2") format("woff2"),
+    url("fonts/TTHoves-Bold.woff") format("woff"),
+    url("fonts/TTHoves-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: local("TT Hoves Black"), local("TTHoves-Black"),
+    url("fonts/TTHoves-Black.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TTHoves-Black.woff2") format("woff2"),
+    url("fonts/TTHoves-Black.woff") format("woff"),
+    url("fonts/TTHoves-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  color: #333333;
+  line-height: 100%;
+}
+
+body {
+  font-family: "TT Hoves";
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2,
+h3,
+h3 a {
+  font-weight: 300;
+  font-size: 64px;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+
+h3,
+h3 a {
+  font-size: 40px;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+
+.container {
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+.link,
+.send {
+  width: 222px;
+  padding: 30px 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding-right: 43px;
+  border: none;
+}
+
+.link.white {
+  background-color: #ffffff;
+}
+
+.link span,
+.send span {
+  position: relative;
+}
+
+.link.black span,
+.send span {
+  color: #ffffff;
+}
+
+.link span:after,
+.send span:after {
+  content: "";
+  width: 18px;
+  height: 8px;
+  display: block;
+  position: absolute;
+  background-image: url(../img/black-arrow.svg);
+  background-size: cover;
+  background-position: center;
+  top: 1px;
+  right: -31px;
+}
+
+.link.black span:after,
+.form .send span:after {
+  background-image: url(../img/white-arrow.svg);
+}
+
+.link.black,
+.send {
+  background-color: #333333;
+}
+
+/*header*/
+
+.header {
+  padding: 30px 0;
+}
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo__img {
+  max-width: 70px;
+}
+
+.header .nav {
+  width: 770px;
+  display: flex;
+  align-items: center;
+}
+
+.header .nav .nav__link {
+  padding-right: 30px;
+  padding-left: 30px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 400;
+}
+
+.header .nav .nav__link:first-child {
+  padding-left: 0;
+}
+
+.header .nav .nav__link:last-child {
+  padding-right: 0;
+}
+
+/*баннер*/
+
+.banner > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner .banner__title {
+  color: #bdbdbd;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 64px;
+  margin-right: 30px;
+}
+
+.banner .banner__title .banner__accent {
+  font-weight: 700;
+  color: #333333;
+}
+
+.banner .banner__back {
+  width: 770px;
+  position: relative;
+}
+
+.banner .banner__back .banner__link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+/*боковое меню*/
+.column {
+  display: flex;
+}
+
+.column .column__left {
+  width: 100px;
+}
+
+.column .column__title {
+  margin: 10px;
+}
+
+.column .nav .nav__link {
+  display: block;
+  margin: 10px;
+}
+
+/*о компании*/
+.company .company__body {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #fbfbfb 88%, #ffffff 12%);
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 30px;
+}
+
+.company .images {
+  display: flex;
+}
+
+.company .images .images__img {
+  margin-bottom: 30px;
+}
+
+.company .images__left,
+.company .images__right {
+  width: 270px;
+  margin-right: 30px;
+}
+
+.company .images__right {
+  padding-top: 30px;
+}
+
+.company .info {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/*основные задачи*/
+.tasks .tasks__title {
+  margin-bottom: 60px;
+}
+
+.tasks .tasks__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks .tasks__list .tasks__item {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.tasks .tasks__list .tasks__item .tasks__number {
+  font-weight: 900;
+  font-size: 200px;
+  color: #f2f2f2;
+  margin-right: 30px;
+}
+
+.tasks .tasks__list .tasks__item .tasks__text {
+  font-size: 22px;
+  line-height: 36px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.tasks .tasks-list .task-item.left {
+  width: 413px;
+}
+
+.tasks .tasks-list .task-item.right {
+  width: 570px;
+}
+
+/*наши проекты*/
+
+.project .project__link {
+  margin-left: auto;
+}
+
+.project .project__title {
+  margin-bottom: 60px;
+}
+
+.project .project__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project .project__list .project__item {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project .item .item__caption {
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.8);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.project .project__item:hover .item__caption {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.project .item .item__caption .item__title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.project .project__list .project__item .item__wrap {
+  max-width: 73%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project .project__list .project__item .item__detailed {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: relative;
+}
+
+.project .project__list .project__item .item__detailed:after {
+  content: "";
+  width: 18px;
+  height: 8px;
+  display: block;
+  position: absolute;
+  background-image: url(../img/white-arrow.svg);
+  background-size: cover;
+  background-position: center;
+  top: 1px;
+  right: -31px;
+}
+
+/* footer */
+.footer {
+  background-color: #2c2c2c;
+  padding-top: 58px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.footer h3 {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.footer .footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 58px;
+}
+
+.footer .contacts {
+  width: 280px;
+}
+
+.footer .social {
+  width: 193px;
+}
+
+.footer .menu .menu__link {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.footer .social .social__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .cotacts__list .cotacts__item {
+  display: flex;
+  align-items: center;
+}
+
+.footer .cotacts__list .cotacts__item .cotacts__text,
+.footer .cotacts__list .cotacts__item .cotacts__link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.footer .cotacts__list .cotacts__item + .cotacts__item {
+  margin-top: 32px;
+}
+
+.footer .cotacts__list .cotacts__item .cotacts__img {
+  margin-right: 19px;
+}
+
+.footer .copyright {
+  border-top: 1px solid #ffffff;
+  padding: 24px 20px;
+}
+
+.footer .copyright .copyright__text {
+  color: rgba(200, 200, 200, 0.5);
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+}
