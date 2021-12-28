@@ -33,5 +33,6 @@ module.exports = {
     "prefer-arrow-callback": "off",
     "prefer-destructuring": "off",
     "no-undef": "off",
+    "func-names": "off",
   },
 };
