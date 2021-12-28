@@ -32,5 +32,6 @@ module.exports = {
     "no-unused-vars": "off",
     "prefer-arrow-callback": "off",
     "prefer-destructuring": "off",
+    "no-undef": "off",
   },
 };

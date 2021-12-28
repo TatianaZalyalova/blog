@@ -4,3 +4,5 @@ coverage
 dist
 .vscode
 .eslintcache
+spec
+lib

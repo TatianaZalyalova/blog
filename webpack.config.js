@@ -2,6 +2,9 @@ const { template } = require("@babel/core");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const glob = require("glob");
+
+const pages = glob.sync("pages/*.html");
 
 module.exports = {
   entry: "./src/index.js",
@@ -16,9 +19,13 @@ module.exports = {
     },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html",
-    }),
+    ...pages.map(
+      (el) =>
+        new HtmlWebpackPlugin({
+          filename: el.replace(/^pages\//, ""),
+          template: el,
+        })
+    ),
     new MiniCssExtractPlugin(),
   ],
   module: {
@@ -38,15 +45,15 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
           filename: "img/[contenthash][ext]",
         },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
