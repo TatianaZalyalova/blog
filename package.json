@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "lint": "prettier --check . && eslint . && stylelint \"**/*.scss\"",
     "lint:fix": "prettier --write . && eslint . --fix && stylelint \"**/*.scss\" --fix",
     "prepare": "husky install",
