@@ -1,31 +1,40 @@
-const { template } = require("@babel/core");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const glob = require("glob");
 
-const pages = glob.sync("pages/*.html");
-
 module.exports = {
-  entry: "./src/index.js",
+  entry: { index: "./src/index.js", slider: "./src/slider.js" },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   devtool: "eval-source-map",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "index_bundle.js",
     clean: true,
     environment: {
       arrowFunction: false,
     },
   },
   plugins: [
-    ...pages.map(
-      (el) =>
-        new HtmlWebpackPlugin({
-          filename: el.replace(/^pages\//, ""),
-          template: el,
-        })
-    ),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "./pages/index.html",
+      chunks: ["index", "slider"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "news.html",
+      template: "./pages/news.html",
+      chunks: ["index"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "detail.html",
+      template: "./pages/detail.html",
+      chunks: ["index"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "contacts.html",
+      template: "./pages/contacts.html",
+      chunks: ["index"],
+    }),
     new MiniCssExtractPlugin(),
   ],
   module: {
@@ -45,7 +54,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg)$/i,
         type: "asset/resource",
         generator: {
           filename: "img/[contenthash][ext]",
@@ -58,10 +67,6 @@ module.exports = {
     ],
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
     port: 9000,
   },
 };
