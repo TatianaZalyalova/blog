@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<meta charset=UTF8>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Блог</title> 
+	</head>
+	<body>
+        <%= require('html-loader!../src/includes/header.html').default %>
+        <div class="section feedback">
+            <div class="feedback__body container">
+                <h1>Связаться с нами</h1>
+                <div class="feedback__wrap">
+                    <form class="feedback__form form">
+                        <p><input type="text" name="name" placeholder="Имя" class="form__input"></p>
+                        <p><input type="text" name="phone" placeholder="Номер телефона*" class="form__input"></p>
+                        <p><input type="text" name="e-mail" placeholder="E-mail*" class="form__input"></p>
+                        <p><input type="text" name="product" placeholder="Интересующий товар/услуга" class="form__input"></p>
+                        <textarea placeholder="Сообщение*" class="form__textarea"></textarea>
+                        <label class="form__label">
+                        <input class="form__checkbox" type="checkbox" checked />
+                        <span>Отправляя заявку Вы соглашаетесь с политикой конфиденциальности</span>
+                    </label>
+                        <button type="submit" class="form__send send"><span>Отправить</span></button>
+                        <div class="form__approval"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%= require('html-loader!../src/includes/footer.html').default %>
+    </body>
+</html>
